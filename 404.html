@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Fastnet — Page Not Found</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .error-page {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--sp-8) var(--container-pad);
+    background: var(--forest-dk);
+  }
+  .error-page img { width: 96px; height: 96px; margin-bottom: var(--sp-8); }
+  .error-page h1 { color: var(--cream); font-size: clamp(2rem, 6vw, 3.25rem); margin-bottom: var(--sp-4); }
+  .error-page p { color: var(--white-70); max-width: 40ch; margin-bottom: var(--sp-8); }
+  .error-page .lang-row { display: flex; gap: var(--sp-2); margin-top: var(--sp-10); }
+  .error-page .lang-btn { color: var(--white-70); background: var(--white-10); }
+  .error-page .lang-btn[aria-pressed="true"] { background: var(--brass); color: var(--forest-dk); }
+</style>
+</head>
+<body>
+<div class="error-page">
+  <img src="images/logo.png" alt="The Fastnet" width="140" height="140">
+  <h1 data-i18n="404.title">Lost on the Way to the Bar?</h1>
+  <p data-i18n="404.desc">This page doesn't exist — but a cold pint at The Fastnet does.</p>
+  <a href="/" class="btn btn--primary" data-i18n="404.home">Back to Home</a>
+  <div class="lang-row">
+    <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
+    <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
+    <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="Català">CA</button>
+  </div>
+</div>
+<script src="js/i18n.js" defer></script>
+</body>
+</html>

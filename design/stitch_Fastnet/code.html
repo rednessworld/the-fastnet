@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Heritage &amp; Hearth</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Montserrat:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-fixed": "#ffdcbd",
+                "primary": "#00150b",
+                "forest-accent": "#062C1D",
+                "primary-fixed": "#c4ecd4",
+                "surface-variant": "#e4e2de",
+                "on-secondary": "#ffffff",
+                "on-tertiary": "#ffffff",
+                "secondary-container": "#ffca98",
+                "error-container": "#ffdad6",
+                "on-primary": "#ffffff",
+                "inverse-primary": "#a8cfb9",
+                "surface-dim": "#dbdad6",
+                "primary-fixed-dim": "#a8cfb9",
+                "on-surface": "#1b1c1a",
+                "surface-container-low": "#f5f3ef",
+                "background": "#fbf9f5",
+                "inverse-on-surface": "#f2f0ed",
+                "on-tertiary-fixed-variant": "#5d4201",
+                "on-primary-fixed": "#002114",
+                "body-slate": "#4A4E54",
+                "headline-charcoal": "#1A1A1A",
+                "on-error": "#ffffff",
+                "on-background": "#1b1c1a",
+                "surface-bright": "#fbf9f5",
+                "on-secondary-container": "#7a532a",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#30312e",
+                "on-surface-variant": "#414844",
+                "outline-variant": "#c1c8c2",
+                "surface-tint": "#426653",
+                "on-secondary-fixed": "#2c1600",
+                "secondary-fixed-dim": "#f0bd8b",
+                "tertiary": "#190f00",
+                "on-tertiary-fixed": "#261900",
+                "surface-container-high": "#eae8e4",
+                "primary-container": "#062c1d",
+                "on-secondary-fixed-variant": "#623f18",
+                "oak-wood": "#D4A373",
+                "surface": "#fbf9f5",
+                "surface-container-highest": "#e4e2de",
+                "surface-container-lowest": "#ffffff",
+                "error": "#ba1a1a",
+                "tertiary-fixed-dim": "#e9c176",
+                "tertiary-container": "#342300",
+                "outline": "#727973",
+                "on-primary-container": "#709581",
+                "tertiary-fixed": "#ffdea5",
+                "secondary": "#7d562d",
+                "on-primary-fixed-variant": "#2a4e3d",
+                "surface-container": "#efeeea",
+                "on-tertiary-container": "#ab8844",
+                "brass-accent": "#C5A059"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "section-gap": "120px",
+                "unit": "8px",
+                "container-max": "1200px",
+                "margin-mobile": "20px",
+                "gutter": "24px"
+        },
+        "fontFamily": {
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "body-lg": [
+                        "Montserrat"
+                ],
+                "headline-xl": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Montserrat"
+                ],
+                "label-caps": [
+                        "Montserrat"
+                ],
+                "nav-link": [
+                        "Montserrat"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "headline-lg-mobile": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-xl": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "nav-link": [
+                        "14px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+          .brass-border {
+              border: 1px solid rgba(197, 160, 89, 0.3);
+          }
+          .subtle-border {
+              border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+          .btn-primary {
+              background-color: theme('colors.forest-accent');
+              color: theme('colors.on-primary');
+              border: 1px solid theme('colors.forest-accent');
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              transition: background-color 0.3s ease, border-color 0.3s ease;
+          }
+          .btn-primary:hover {
+              background-color: theme('colors.primary');
+              border-color: theme('colors.primary');
+          }
+          .btn-secondary {
+              background-color: transparent;
+              color: theme('colors.headline-charcoal');
+              border: 1px solid theme('colors.headline-charcoal');
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              transition: background-color 0.3s ease, color 0.3s ease;
+          }
+          .btn-secondary:hover {
+              background-color: rgba(0, 0, 0, 0.05);
+          }
+          .btn-secondary-light {
+              background-color: transparent;
+              color: theme('colors.surface-container-lowest');
+              border: 1px solid theme('colors.surface-container-lowest');
+              text-transform: uppercase;
+              letter-spacing: 0.1em;
+              transition: background-color 0.3s ease, color 0.3s ease;
+          }
+          .btn-secondary-light:hover {
+              background-color: rgba(255, 255, 255, 0.1);
+          }
+      </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-brass-accent selection:text-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed full-width top-0 z-50 bg-background/90 backdrop-blur-md border-b border-black/10">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-20">
+<a class="font-headline-md text-headline-md font-bold text-headline-charcoal tracking-tight shrink-0" href="#">Heritage &amp; Hearth</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-forest-accent border-b border-forest-accent pb-1 font-nav-link text-nav-link hover:text-forest-accent transition-all duration-300" href="#">Home</a>
+<a class="text-body-slate font-nav-link text-nav-link hover:text-forest-accent transition-colors duration-300" href="#">About</a>
+<a class="text-body-slate font-nav-link text-nav-link hover:text-forest-accent transition-colors duration-300" href="#">Menu</a>
+<a class="text-body-slate font-nav-link text-nav-link hover:text-forest-accent transition-colors duration-300" href="#">What's On</a>
+<a class="text-body-slate font-nav-link text-nav-link hover:text-forest-accent transition-colors duration-300" href="#">Gallery</a>
+<a class="text-body-slate font-nav-link text-nav-link hover:text-forest-accent transition-colors duration-300" href="#">Contact</a>
+</div>
+<a class="hidden md:inline-flex btn-primary font-label-caps text-label-caps px-6 py-3 rounded hover:scale-95 transition-transform" href="#">BOOK A TABLE</a>
+<button class="md:hidden text-headline-charcoal p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Full-Screen Hero -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-t from-background via-black/40 to-black/20 z-10"></div>
+<img alt="Interior of a classic Irish pub with dark wood and warm lighting" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtzB8gvXYkat1l7G7PqhtSD5E6yDg6CFwGy2p2M3F4Cvm5mrDtbKSq1JP2kJDwJIzciFYNMfvrJs4l7X7PaJsRET5vBM4Yy5hcGa9SAAmG3MPJ01uiMslMcWGOweRGr2FjXKcoC4dUcxYK81XBhGRUitjfqB2m30npV7P9Kdksz2PhRAS6kkGluEhBLetmbwOAEGaGEq_8kc--2Q3pi_fJaA1IJFoQ5QV_kVfwUdTQMCTBUYN1k0hPZQ"/>
+</div>
+<div class="relative z-20 text-center px-margin-mobile max-w-container-max mx-auto flex flex-col items-center">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl mb-6 max-w-4xl text-surface-container-lowest">GOOD PINTS. GOOD PEOPLE. GOOD TIMES.</h1>
+<p class="font-body-lg text-body-lg text-surface-container-lowest max-w-2xl mb-10">An Irish pub built for great nights, live music, proper food and one more round.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="btn-primary font-label-caps text-label-caps px-8 py-4 rounded" href="#">BOOK A TABLE</a>
+<a class="btn-secondary-light font-label-caps text-label-caps px-8 py-4 rounded" href="#">WHAT'S ON</a>
+</div>
+</div>
+</section>
+<!-- Intro Section -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 md:col-start-2 relative z-10">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-6 text-headline-charcoal">MORE THAN A PUB.</h2>
+<p class="font-body-md text-body-md text-body-slate mb-6">
+                        Step into a space where centuries of storytelling meet high-end hospitality. We believe in the tactile comfort of hand-rubbed walnut, the warmth of a genuine smile, and the perfect pour of a pint.
+                    </p>
+<p class="font-body-md text-body-md text-body-slate">
+                        This isn't just about a quick drink; it's about authentic Irish hospitality elevated for the modern soul. Pull up a stool, the fire is lit.
+                    </p>
+</div>
+<div class="md:col-span-6 relative mt-10 md:mt-0 md:-ml-12 z-0">
+<div class="subtle-border rounded-lg overflow-hidden relative group">
+<img alt="A perfectly poured pint of Guinness on a worn wooden bar top" class="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhALy8zGrygiRqv1jH0IDc_BxmPJ588nQChY51_QS7BW8d_pHa_61HVfRVE-I7snvSL3blEf6Ja2J8Bovr7LdJ6HUrrpAlOPBF5He6dsGcLYMOV5_rumK90GIHtWtJDd8dFHcBF-CwBipKbxnudhvFPPfGOZheI5Dj6BFKuHhCyITZwyDWAW5Gz9fRNH75O_3io8XUdrTOMFgmWzFF4CDEsGjakjj-JxDhG9hr7y0TFAlFkQid-3hxaw"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Section -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto bg-surface-container-low rounded-xl subtle-border my-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group relative overflow-hidden rounded-lg cursor-pointer h-80">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A close up of a busy bar counter in a pub, with a bartender pouring drinks, warm lighting reflecting off brass taps and dark wood. Cinematic editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDz6jZARpI2eJYDBjRL686skpUz_XwzUxW1skKycjw74I50kXF3YLzIwRIYbD-wC5Qaetm9HOLCyyCEpjgrVXduEsebxLcUjlOKH4F_ylY4PfIGDxEf0doDSrU4j3wTjDPZeJIWHf-XrHrU1twwHQckcK3tUgTHk33sJv-EgUkaBUjp1PnidySCsrKH0enH37EoyctAfngf7xE9xAkKhSdPEccL2UKR_OjMN9jloJ2yY9If_Sz6QvIbw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-surface-container-lowest">THE BAR</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest opacity-0 group-hover:opacity-100 transition-opacity duration-300">Expertly pulled pints and curated spirits.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative overflow-hidden rounded-lg cursor-pointer h-80">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A beautifully plated traditional Irish dish on a rustic ceramic plate, resting on a dark walnut table. Moody lighting, luxury food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ_2qQhzn20zm3CnPtLTxAUfgu0BVmykHy7lvjaNl4s85nuvwT2Gh8MdlfObKXvIe91hl56JJpjCo6-TqaeguB14gXvtKewUWWoKa5Dxij-jLH0k9UAexeL4fCITHbM-N56mJxaGNd83dvZh0-VLD9vnp74FiwAy092CyHTsF5TLp-FUB23iueYifnxUYqrfRAfyCjSgeM1D9AIsvzQD1S3m0xOqylae8-3nlIfVpGUAftG7YttEyvkg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-surface-container-lowest">THE KITCHEN</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest opacity-0 group-hover:opacity-100 transition-opacity duration-300">Hearty, elevated pub classics.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative overflow-hidden rounded-lg cursor-pointer h-80">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A musician playing an acoustic guitar in a dimly lit pub corner, warm firelight in the background, intimate atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTSF4m3o4aKY7-WMtfejc8cbvyxPaqRPtxdROG1mC8RM8hO8sLNpo9zvUl79xAxyfFSNhkuI-P8mMI61XQDArRw2xc4-g3_qH2jfGdJOVMon2Dxps_VEUIRTtPEVXcPVf75K_xAZpRRFfpxudankrAhBqSodahY-WUqTXVqSFzvKIeUVaBDC0nV86M7YqHjH2Rz581QdLXzBzjXXq9lEg4HsTSPzGGumHaTTR3tE58DV9i3RMwu47bnw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-surface-container-lowest">LIVE MUSIC</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest opacity-0 group-hover:opacity-100 transition-opacity duration-300">Traditional sessions and local talent.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative overflow-hidden rounded-lg cursor-pointer h-80">
+<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A lively group of friends cheering at a table in a pub, watching a game off-screen, holding pints, joyful atmosphere, high contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCisTEJlEDACO0YsEcnD38i3AHD4cJXUunhpX4aLvX1ag7ZDXuoN55JqFAeI4nAaOYykT_fD7xHMOdDxxonQ3Atxa78dNefNWXk63GrcTvYiUsW0dE1Gn2qWV9wndkX4q2NoF1HDIW15hVl6IESaRP4ZHfcn5UpKVKjc_XzKqFWxyqK0bpSdGXe62ExSrUkTJasggmmx-45drbqXO4evWD6OXFjStSyhCOAOJ6n9Mjr4NwKiAovc9CGGw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline-md text-headline-md mb-2 text-surface-container-lowest">GAME DAY</h3>
+<p class="font-body-md text-body-md text-surface-container-lowest opacity-0 group-hover:opacity-100 transition-opacity duration-300">The best atmosphere for live sports.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Food & Drinks -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row items-end justify-between mb-12 border-b border-black/10 pb-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-headline-charcoal">COME HUNGRY.</h2>
+<a class="font-label-caps text-label-caps text-forest-accent hover:text-primary transition-colors mt-4 md:mt-0 flex items-center" href="#">VIEW THE FULL MENU <span class="material-symbols-outlined ml-2 text-[16px]">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 subtle-border rounded-lg overflow-hidden group">
+<img alt="A traditional beef and ale pie with a flaky crust, served with mashed potatoes and peas, alongside a pint of stout." class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVwoVdHTLiicVM5uU_yqSJgbMSObPbCCtEPgbmJ-4HLq9zxEkhXDbzVt7LFBWvJXsRyGQQHMjcMRmaSS0R51BXyz5SjSNPhFXFq5zOm5mwfqA_jNbgIRzkl5SGoWWRTYUfIswAuokYUelZCJxRjaM-EDJ4kJUq7q0UixCyAN6kS8CcmY_9-26sapIUAQndfuvM-Q8UGfSKIW3FHDytCWmUrFyvcPCPqbInl2HRCz7tNPtLTlYtEBfvFA"/>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center space-y-6">
+<div class="border-b border-black/10 pb-4">
+<h4 class="font-headline-md text-headline-md text-headline-charcoal mb-1">Guinness Beef &amp; Ale Pie</h4>
+<p class="font-body-md text-body-md text-body-slate">Slow-braised beef, root vegetables, flaky pastry, rich stout gravy.</p>
+</div>
+<div class="border-b border-black/10 pb-4">
+<h4 class="font-headline-md text-headline-md text-headline-charcoal mb-1">Fish &amp; Chips</h4>
+<p class="font-body-md text-body-md text-body-slate">Beer-battered cod, thick-cut chips, minted mushy peas, tartare sauce.</p>
+</div>
+<div class="border-b border-black/10 pb-4">
+<h4 class="font-headline-md text-headline-md text-headline-charcoal mb-1">Irish Stew</h4>
+<p class="font-body-md text-body-md text-body-slate">Traditional lamb stew, potatoes, carrots, pearl onions, crusty bread.</p>
+</div>
+<div class="border-b border-black/10 pb-4">
+<h4 class="font-headline-md text-headline-md text-headline-charcoal mb-1">Extensive Whiskey Selection</h4>
+<p class="font-body-md text-body-md text-body-slate">A curated list of single malts and rare blends.</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-headline-charcoal mb-1">Classic Cocktails</h4>
+<p class="font-body-md text-body-md text-body-slate">Expertly crafted with premium spirits.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Live Music / What's On -->
+<section class="relative py-section-gap">
+<div class="absolute inset-0 z-0">
+<img alt="A man playing acoustic guitar in a pub setting, surrounded by patrons enjoying drinks and the performance" class="w-full h-full object-cover opacity-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFgkm1ebD8b3MifcPWZSYK_O8Hcfoty5qADejnMav2eCTkGlnv5C-GQv51GRtbtFAFpOKTmie0y5ICu459Yi3MLDuQGPVNvX7OekTsKxDRbX5XRCYGWYOvOK6RQrUjzA97ADxWSn4M9_7BH1nlFqxLREd4WsQVvSxZAOgNwuRzyuWhj-xU5vlbTTcBwdL82EnnS3yOUBRb4SHHF6f7Dx5OKB81FuWVAb9t38ZrHCUjfax-9j0Uic-h8A"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-background/40"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-headline-charcoal mb-10">THE NIGHT STARTS HERE.</h2>
+<div class="flex flex-col space-y-4 max-w-3xl">
+<!-- Event Item -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between py-6 border-b border-black/10 hover:bg-surface-container-low transition-colors px-4 -mx-4 rounded">
+<div>
+<p class="font-label-caps text-label-caps text-forest-accent mb-2">FRI 22 AUG</p>
+<h4 class="font-headline-md text-headline-md text-headline-charcoal">THE DUBLINERS</h4>
+<p class="font-body-md text-body-md text-body-slate mt-1">Live Irish Session - 9:00 PM</p>
+</div>
+<a class="mt-4 sm:mt-0 font-nav-link text-nav-link border border-black/20 text-headline-charcoal px-4 py-2 rounded hover:bg-black/5 transition-colors self-start sm:self-auto" href="#">DETAILS</a>
+</div>
+<!-- Event Item -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between py-6 border-b border-black/10 hover:bg-surface-container-low transition-colors px-4 -mx-4 rounded">
+<div>
+<p class="font-label-caps text-label-caps text-forest-accent mb-2">SAT 23 AUG</p>
+<h4 class="font-headline-md text-headline-md text-headline-charcoal">O'REILLY BROTHERS</h4>
+<p class="font-body-md text-body-md text-body-slate mt-1">Folk &amp; Ballads - 9:30 PM</p>
+</div>
+<a class="mt-4 sm:mt-0 font-nav-link text-nav-link border border-black/20 text-headline-charcoal px-4 py-2 rounded hover:bg-black/5 transition-colors self-start sm:self-auto" href="#">DETAILS</a>
+</div>
+<!-- Event Item -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between py-6 border-b border-black/10 hover:bg-surface-container-low transition-colors px-4 -mx-4 rounded">
+<div>
+<p class="font-label-caps text-label-caps text-forest-accent mb-2">SUN 24 AUG</p>
+<h4 class="font-headline-md text-headline-md text-headline-charcoal">SUNDAY ROAST &amp; JAZZ</h4>
+<p class="font-body-md text-body-md text-body-slate mt-1">Local Jazz Trio - 2:00 PM</p>
+</div>
+<a class="mt-4 sm:mt-0 font-nav-link text-nav-link border border-black/20 text-headline-charcoal px-4 py-2 rounded hover:bg-black/5 transition-colors self-start sm:self-auto" href="#">DETAILS</a>
+</div>
+</div>
+<div class="mt-10">
+<a class="btn-secondary font-label-caps text-label-caps px-8 py-3 rounded inline-block" href="#">VIEW ALL EVENTS</a>
+</div>
+</div>
+</section>
+<!-- Social Proof -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto text-center">
+<span class="material-symbols-outlined text-forest-accent text-[48px] mb-6">format_quote</span>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-headline-charcoal max-w-4xl mx-auto leading-tight mb-8">
+                "THE KIND OF PUB YOU WALK INTO FOR ONE PINT AND END UP STAYING ALL NIGHT."
+            </h2>
+<div class="flex items-center justify-center space-x-2 text-forest-accent mb-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-label-caps text-label-caps text-body-slate tracking-widest">GOOGLE REVIEWS</p>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface w-full py-section-gap border-t border-black/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter max-w-container-max mx-auto px-margin-mobile md:px-gutter">
+<!-- Brand -->
+<div class="md:col-span-1">
+<a class="font-headline-md text-headline-md text-headline-charcoal block mb-4" href="#">Heritage &amp; Hearth</a>
+<p class="font-body-md text-body-md text-body-slate mb-6">Established in Dublin.<br/>Where good times are poured daily.</p>
+</div>
+<!-- Links -->
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-forest-accent mb-4">INFO</h4>
+<ul class="space-y-3">
+<li><a class="text-body-slate font-label-caps text-label-caps hover:text-forest-accent transition-colors duration-200" href="#">Location</a></li>
+<li><a class="text-body-slate font-label-caps text-label-caps hover:text-forest-accent transition-colors duration-200" href="#">Hours</a></li>
+<li><a class="text-body-slate font-label-caps text-label-caps hover:text-forest-accent transition-colors duration-200" href="#">Privacy Policy</a></li>
+<li><a class="text-body-slate font-label-caps text-label-caps hover:text-forest-accent transition-colors duration-200" href="#">Accessibility</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div class="md:col-span-1">
+<h4 class="font-label-caps text-label-caps text-forest-accent mb-4">CONTACT</h4>
+<p class="font-body-md text-body-md text-body-slate mb-2">123 Whiskey Row<br/>Dublin, Ireland</p>
+<p class="font-body-md text-body-md text-body-slate mb-2">+353 1 234 5678</p>
+<p class="font-body-md text-body-md text-body-slate">slainte@heritagehearth.ie</p>
+</div>
+<!-- Map Placeholder -->
+<div class="md:col-span-1 h-48 subtle-border rounded-lg overflow-hidden relative">
+<div class="bg-cover bg-center w-full h-full opacity-80" data-alt="A stylized map showing a location in Dublin, Ireland, with minimal lines and a subtle marker indicating the pub's location." data-location="Dublin" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCj-IBy2Vfjm5IBBrzIhJ3bH1pAyRtZC1y61CFv-o6qUU3fVHm_bAvrHMMOF6311QqOzQ6eueWjH-r0Pt91wiFCK__kv5rGVy5fwpWdNBdPbi7p42OTdoHwaiqbp2Dt_D_czD9NSW65ImN5nciJUS74eIYCWi__He3hNWBZDAe2RvjkEDH_HzKUV5NbEeb3jMXpiUxEC65c1gW7zgH5azzLgJvVnvTBekJfBu1K4R68FTdPxvfBzJb6LA')"></div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-12 pt-8 border-t border-black/10 text-center">
+<p class="font-body-md text-body-md text-body-slate">© 2024 Heritage &amp; Hearth. Established in Dublin.</p>
+</div>
+</footer>
+</body></html>

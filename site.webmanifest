@@ -1,0 +1,16 @@
+{
+  "name": "The Fastnet — Irish Bar & Restaurant",
+  "short_name": "The Fastnet",
+  "description": "Irish bar & restaurant on Barcelona's Ciutat Vella waterfront.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF9F5",
+  "theme_color": "#062C1D",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

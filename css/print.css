@@ -1,0 +1,69 @@
+/* ============================================================
+   PRINT STYLESHEET — optimised for printing the menu
+   Link: <link rel="stylesheet" media="print" href="css/print.css">
+   Usage: Ctrl/Cmd+P from any page — shows only the full menu.
+   ============================================================ */
+
+@media print {
+  @page { margin: 1.5cm; }
+
+  /* Hide everything except the menu section */
+  #loading-screen, #nav, .skip-nav, #mobile-nav,
+  #hero, #about, #gallery, #reviews, #find-us,
+  .footer, #cookie-banner,
+  #whatsapp-btn, #back-to-top,
+  .menu__tabs { display: none !important; }
+
+  body {
+    font-size: 11pt;
+    color: #000;
+    background: #fff;
+  }
+
+  /* Reveal all menu panels for print */
+  .menu__panel { display: block !important; }
+
+  #menu { padding: 0; background: none; }
+
+  #menu::before {
+    content: 'The Fastnet — Full Menu';
+    display: block;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 22pt;
+    text-align: center;
+    margin-bottom: 20pt;
+    padding-bottom: 10pt;
+    border-bottom: 1pt solid #bbb;
+  }
+
+  .menu__subcat {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 14pt;
+    font-weight: bold;
+    color: #000;
+    margin: 14pt 0 6pt;
+    padding-bottom: 4pt;
+    border-bottom: 0.5pt solid #ccc;
+  }
+
+  .menu__items { display: block; }
+
+  .menu__item {
+    border: none;
+    padding: 6pt 0;
+    border-bottom: 0.5pt solid #e5e5e5;
+    break-inside: avoid;
+    background: none;
+  }
+
+  .menu__item-name { font-size: 11pt; font-family: Georgia, serif; color: #000; }
+  .menu__item-price { color: #000; font-weight: bold; }
+  .menu__item-desc { font-size: 9pt; color: #555; }
+  .menu__tag { border: 0.5pt solid #999; background: none; color: #000; }
+  .menu__pending { border: 0.5pt dashed #999; }
+
+  .section-header h2 { font-size: 0; } /* hide visible heading — replaced by ::before */
+  .eyebrow, .heading-underline { display: none; }
+
+  a { text-decoration: none; color: #000; }
+}
