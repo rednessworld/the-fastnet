@@ -191,10 +191,9 @@
     if (!panels.length || !container) return;
     let max = 0;
     panels.forEach((p) => {
-      const wasActive = p.classList.contains('menu__panel--active');
       p.style.display = 'block';
       max = Math.max(max, p.scrollHeight);
-      if (!wasActive) p.style.display = '';
+      p.style.display = '';
     });
     container.style.minHeight = max + 'px';
   }
