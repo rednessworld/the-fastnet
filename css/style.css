@@ -85,7 +85,7 @@
   /* Layout */
   --container-max: 1280px;
   --container-pad: 1.25rem;
-  --nav-height: 220px;
+  --nav-height: 100px;
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -345,7 +345,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   justify-content: space-between;
 }
 .nav__brand { display: flex; align-items: center; gap: var(--sp-2); flex-shrink: 0; }
-.nav__brand img { height: 180px; width: auto; }
+.nav__brand img { height: 130px; width: auto; }
 
 .nav__links {
   display: none;
@@ -382,7 +382,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   padding: 3px;
 }
 #nav .nav__lang { background: var(--white-12); }
-.nav__lang .lang-btn { font-size: 0.85rem; padding: 8px 16px; }
+.nav__lang .lang-btn { font-size: 0.69rem; padding: 6.5px 13px; }
 .lang-btn {
   display: inline-flex;
   align-items: center;
@@ -431,7 +431,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 .btn--outline:hover { background: var(--forest-08); }
 
-.nav__reserve { display: none; font-size: 0.95rem; padding: 1.1rem 2.25rem; }
+.nav__reserve { display: none; font-size: 0.77rem; padding: 0.89rem 1.83rem; }
 
 .hamburger {
   display: flex;
