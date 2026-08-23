@@ -85,7 +85,7 @@
   /* Layout */
   --container-max: 1280px;
   --container-pad: 1.25rem;
-  --nav-height: 92px;
+  --nav-height: 220px;
 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -345,7 +345,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   justify-content: space-between;
 }
 .nav__brand { display: flex; align-items: center; gap: var(--sp-2); flex-shrink: 0; }
-.nav__brand img { height: 60px; width: auto; }
+.nav__brand img { height: 180px; width: auto; }
 
 .nav__links {
   display: none;
