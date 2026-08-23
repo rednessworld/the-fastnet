@@ -24,17 +24,17 @@
 <meta name="theme-color" content="#062C1D">
 
 <!-- Preload critical fonts -->
-<link rel="preload" href="fonts/cormorant-garamond-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/oswald-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/karla-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cinzel-decorative-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lato-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lato-400.woff2" as="font" type="font/woff2" crossorigin>
 
 <!-- Preload hero image -->
 <link rel="preload" as="image"
-      imagesrcset="images/hero-mobile.webp 750w, images/hero.webp 1600w"
+      imagesrcset="images/herov3-mobile.webp 750w, images/herov3.webp 1600w"
       imagesizes="(max-width: 767px) 750px, 1600px"
       type="image/webp" fetchpriority="high">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=37">
 <link rel="stylesheet" href="css/print.css" media="print">
 
 <script type="application/ld+json">
@@ -71,8 +71,8 @@
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": 4.7,
-    "reviewCount": 180
+    "ratingValue": 4.2,
+    "reviewCount": 906
   }
 }
 </script>
@@ -82,7 +82,7 @@
 <a href="#main" class="skip-nav" data-i18n="skip.content">Skip to content</a>
 
 <div id="loading-screen">
-  <img src="images/logo.png" alt="" width="120" height="120">
+  <img src="images/logoV1.webp" alt="" width="120" height="120">
 </div>
 
 <!-- ============================================================
@@ -91,7 +91,7 @@
 <nav id="nav" aria-label="Main navigation" data-i18n-aria="nav.aria.main">
   <div class="nav__inner">
     <a href="#hero" class="nav__brand">
-      <img src="images/logo.png" alt="The Fastnet" width="140" height="140" style="height:44px;width:auto;">
+      <img src="images/logoV1.webp" alt="The Fastnet" width="60" height="60">
     </a>
 
     <div class="nav__links" id="nav-links">
@@ -104,9 +104,9 @@
 
     <div class="nav__right">
       <div class="nav__lang">
-        <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
-        <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="Català">CA</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="EN — English">EN</button>
+        <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="ES — Español">ES</button>
+        <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="CA — Català">CA</button>
       </div>
       <a href="#find-us" class="btn btn--primary nav__reserve" data-i18n="nav.reserve">Reserve</a>
       <button id="hamburger" class="hamburger" aria-expanded="false" aria-controls="mobile-nav" data-i18n-aria="nav.aria.toggle" aria-label="Menu">
@@ -133,9 +133,9 @@
   <div class="mobile-nav__bottom">
     <a href="#find-us" class="btn btn--primary" data-i18n="nav.reserve">Reserve</a>
     <div class="mobile-nav__lang">
-      <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
-      <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
-      <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="Català">CA</button>
+      <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="EN — English">EN</button>
+      <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="ES — Español">ES</button>
+      <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="CA — Català">CA</button>
     </div>
   </div>
 </div>
@@ -150,10 +150,10 @@
   <section id="hero">
     <div class="hero__bg">
       <picture>
-        <source srcset="images/hero-mobile.webp" media="(max-width: 767px)" type="image/webp">
-        <source srcset="images/hero.webp" type="image/webp">
-        <img id="hero-img" src="images/hero.jpg" alt="Row of freshly poured Guinness pints at The Fastnet bar, with whiskey bottles and a Sláinte sign behind"
-             width="1600" height="1000" fetchpriority="high" loading="eager" decoding="auto">
+        <source srcset="images/herov3-mobile.webp" media="(max-width: 767px)" type="image/webp">
+        <source srcset="images/herov3.webp" type="image/webp">
+        <img id="hero-img" src="images/herov3.jpg" alt="Row of freshly poured Guinness pints at The Fastnet bar, with whiskey bottles and a Sláinte sign behind"
+             width="1600" height="900" fetchpriority="high" loading="eager" decoding="auto">
       </picture>
       <div class="hero__overlay"></div>
     </div>
@@ -161,10 +161,6 @@
       <span class="hero__eyebrow" data-i18n="hero.eyebrow">Irish Bar &amp; Restaurant · Ciutat Vella</span>
       <h2 class="hero__title" data-i18n="hero.title">Good Pints. Good Craic. Right on the Water.</h2>
       <p class="hero__sub" data-i18n="hero.sub">Cold Guinness, a proper whiskey shelf and home-style food, steps from the Barceloneta harbour — open every day of the week.</p>
-      <div class="hero__actions">
-        <a href="https://wa.me/34600000000" data-wa-link class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta1">Reserve via WhatsApp</a>
-        <a href="#menu" class="btn btn--outline-light" data-i18n="hero.cta2">View the Menu</a>
-      </div>
     </div>
     <div class="hero__scroll" aria-hidden="true"></div>
   </section>
@@ -179,28 +175,14 @@
           <span class="eyebrow reveal" data-i18n="about.eyebrow">Our Story</span>
           <h2 class="section-title reveal--heading" data-i18n="about.title">A Proper Irish Pub, Barcelona Side</h2>
           <span class="heading-underline" aria-hidden="true"></span>
-          <div style="margin-top: var(--sp-6);">
+          <div class="about__body">
             <p class="reveal" data-i18n="about.p1">The Fastnet brings the real thing to Passeig de Joan de Borbó — a well-kept pint of Guinness, Murphy's on tap, and a whiskey shelf worth taking your time over. Rugby and football play on the screens, and the regulars mix easily with whoever's just walked in off the port.</p>
             <p class="reveal" style="transition-delay:80ms;" data-i18n="about.p2">The kitchen keeps it honest: tapas boards, hearty curries, stacked burgers and plates built to go with a pint, not compete with it.</p>
           </div>
-          <div class="about__stats">
-            <div class="reveal" style="transition-delay:0ms;">
-              <span class="about__stat-num" data-i18n="about.badge1.h">Open 7 Days</span>
-              <span class="about__stat-label" data-i18n="about.badge1.l">No closing day</span>
-            </div>
-            <div class="reveal" style="transition-delay:80ms;">
-              <span class="about__stat-num" data-i18n="about.badge2.h">On Tap</span>
-              <span class="about__stat-label" data-i18n="about.badge2.l">Guinness · Murphy's · Magners</span>
-            </div>
-            <div class="reveal" style="transition-delay:160ms;">
-              <span class="about__stat-num" data-i18n="about.badge3.h">On Screen</span>
-              <span class="about__stat-label" data-i18n="about.badge3.l">Rugby, football &amp; Six Nations</span>
-            </div>
-          </div>
         </div>
         <div class="about__media">
-          <img class="about__media-a reveal--scale" src="images/exterior.webp" alt="The Fastnet's red-fronted storefront and terrace on Passeig de Joan de Borbó, Barcelona" width="824" height="620" loading="lazy" decoding="async">
-          <img class="about__media-b reveal--scale" style="transition-delay:120ms;" src="images/interior.webp" alt="The Fastnet's wooden bar counter with beer taps and a well-stocked whiskey shelf" width="1011" height="630" loading="lazy" decoding="async">
+          <img class="about__media-a reveal--scale" src="images/drink3.webp" alt="A perfectly poured pint of Guinness with tight cream head at The Fastnet" width="516" height="629" loading="lazy" decoding="async">
+          <img class="about__media-b reveal--scale" style="transition-delay:120ms;" src="images/food2.webp" alt="A hearty plate of home-style food served at The Fastnet" width="1080" height="1920" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -218,6 +200,7 @@
         <p class="reveal" style="margin-top:var(--sp-6);" data-i18n="menu.sub">Pub classics, hearty curries and shareable plates — built to go with a pint. Full pricing coming very soon.</p>
       </div>
 
+      <div class="menu__card">
       <div class="menu__tabs" role="tablist" aria-label="Menu categories" data-i18n-aria="menu.aria.tabs">
         <button role="tab" id="tab-tapas" aria-controls="panel-tapas" aria-selected="true" tabindex="0" class="menu__tab menu__tab--active" data-i18n="menu.tab.tapas">Tapas / Starters / Sides</button>
         <button role="tab" id="tab-mains" aria-controls="panel-mains" aria-selected="false" tabindex="-1" class="menu__tab" data-i18n="menu.tab.mains">Main Courses</button>
@@ -490,6 +473,7 @@
           <p class="menu__pending" style="margin-top:var(--sp-6);" data-i18n="menu.pending">We're adding the full menu here shortly — ask our team for today's dishes and prices in the meantime.</p>
         </div>
       </div>
+      </div>
     </div>
   </section>
 
@@ -525,7 +509,7 @@
         </a>
       </div>
 
-      <a class="gallery__insta reveal" href="https://www.instagram.com/thefastnet_barcelona/" target="_blank" rel="noopener noreferrer" data-i18n-aria="gallery.aria.insta" aria-label="Follow The Fastnet on Instagram">
+      <a class="gallery__insta reveal" href="https://www.instagram.com/thefastnet_barcelona/" target="_blank" rel="noopener noreferrer" data-i18n-aria="gallery.aria.insta" aria-label="Follow @thefastnet_barcelona on Instagram">
         <span data-i18n="gallery.insta">Follow @thefastnet_barcelona</span>
       </a>
     </div>
@@ -540,39 +524,29 @@
         <span class="eyebrow reveal" data-i18n="reviews.eyebrow">Word on the Street</span>
         <h2 class="section-title reveal--heading" data-i18n="reviews.title">What People Are Saying</h2>
         <span class="heading-underline" aria-hidden="true" style="margin-left:auto;margin-right:auto;"></span>
-        <div class="reveal" style="margin-top:var(--sp-4);">
-          <div class="reviews__stars" role="img" data-i18n-aria="reviews.aria.stars" aria-label="Rated 4.7 out of 5 stars">★★★★★</div>
-          <span class="reviews__rating-num">4.7</span>
-          <span class="reviews__count" data-i18n="reviews.count">Based on Google Reviews</span>
-        </div>
       </div>
 
-      <!-- PLACEHOLDER REVIEWS — replace with 4 real Google reviews from the client before launch -->
       <div class="reviews__grid stagger-group">
         <div class="review-card reveal">
-          <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-card__text">"Proper pint of Guinness and the staff couldn't have been friendlier. Watched the Six Nations here and it felt like being back home."</p>
-          <p class="review-card__author">Sarah M.</p>
+          <p class="review-card__text">"Calling all French people, come to this bar! It lacks atmosphere, but the quality of the food is excellent, so please give this bar a try."</p>
+          <p class="review-card__author">Geoffrey Boudjelida</p>
         </div>
         <div class="review-card reveal">
-          <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-card__text">"Great spot right by the port. The curry was a nice surprise for an Irish pub — big portion, properly spiced."</p>
-          <p class="review-card__author">Marc P.</p>
+          <p class="review-card__text">"Very friendly staff and fast service. Good place to cool down with a pint and a chat. Shoutout to Michelle who's my favourite bartender!"</p>
+          <p class="review-card__author">Claire</p>
         </div>
         <div class="review-card reveal">
-          <div class="review-card__stars" role="img" aria-label="5 out of 5 stars">★★★★★</div>
-          <p class="review-card__text">"Our go-to for a chilled evening pint. Murphy's on tap, good music, and it never feels touristy even on the water."</p>
-          <p class="review-card__author">Laura G.</p>
+          <p class="review-card__text">"Very nice, homey place. Friendly staff, owner who is actually Irish and good quality Guinness on tap. The only place in Barcelona we've visited twice."</p>
+          <p class="review-card__author">Max Covtun</p>
         </div>
         <div class="review-card reveal">
-          <div class="review-card__stars" role="img" aria-label="4 out of 5 stars">★★★★☆</div>
-          <p class="review-card__text">"Found this by accident and ended up staying for three pints. Wing night on Wednesdays is a steal."</p>
-          <p class="review-card__author">James O.</p>
+          <p class="review-card__text">"Spent my Birthday here after a sailboat ride around Barcelona. Magical night!"</p>
+          <p class="review-card__author">Anthony Maxwell</p>
         </div>
       </div>
 
       <div class="reviews__link reveal">
-        <a class="btn btn--outline" href="https://www.google.com/maps/place/The+Fastnet+Pub/@41.3796402,2.1879888,17z" target="_blank" rel="noopener noreferrer" data-i18n="reviews.link">See all reviews on Google Maps</a>
+        <a class="btn btn--outline" href="https://www.google.com/maps/place/The+Fastnet+Pub/@41.379579,2.187811,17z/data=!3m1!4b1!4m6!3m5!1s0x12a4a3aa79d688df:0x1e57e9a5b8f91a36!8m2!3d41.379579!4d2.187811!16s%2Fg%2F1wjw8v0f" target="_blank" rel="noopener noreferrer" data-i18n="reviews.link">See all reviews on Google Maps</a>
       </div>
     </div>
   </section>
@@ -625,13 +599,13 @@
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.744283197525!2d2.1879888!3d41.3796402!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a3aa79d688df%3A0x1e57e9a5b8f91a36!2sThe%20Fastnet%20Pub!5e0!3m2!1sen!2ses!4v1787260242209!5m2!1sen!2ses"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              sandbox="allow-scripts allow-same-origin allow-popups"
+              sandbox="allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
               data-i18n-aria="findus.aria.map"
               aria-label="Map showing The Fastnet location"
               title="The Fastnet location on Google Maps"></iframe>
-            <a class="findus__map-tap" href="https://www.google.com/maps/place/The+Fastnet+Pub/@41.3796402,2.1879888,17z" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"></a>
+            <a class="findus__map-tap" href="https://www.google.com/maps/place/The+Fastnet+Pub/@41.379579,2.187811,17z/data=!3m1!4b1!4m6!3m5!1s0x12a4a3aa79d688df:0x1e57e9a5b8f91a36!8m2!3d41.379579!4d2.187811!16s%2Fg%2F1wjw8v0f" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1"></a>
           </div>
-          <a class="findus__map-link" href="https://www.google.com/maps/place/The+Fastnet+Pub/@41.3796402,2.1879888,17z" target="_blank" rel="noopener noreferrer" data-i18n="findus.maplink">Open in Google Maps</a>
+          <a class="findus__map-link" href="https://www.google.com/maps/place/The+Fastnet+Pub/@41.379579,2.187811,17z/data=!3m1!4b1!4m6!3m5!1s0x12a4a3aa79d688df:0x1e57e9a5b8f91a36!8m2!3d41.379579!4d2.187811!16s%2Fg%2F1wjw8v0f" target="_blank" rel="noopener noreferrer" data-i18n="findus.maplink">Open in Google Maps</a>
         </div>
       </div>
     </div>
@@ -644,7 +618,7 @@
      ============================================================ -->
 <footer class="footer">
   <div class="container">
-    <p class="footer__brand">The Fastnet</p>
+    <p class="footer__brand"><span class="footer__brand-kern">T</span><span class="footer__brand-kern">h</span>e <span class="footer__brand-kern">F</span>astnet</p>
     <p class="footer__tagline" data-i18n="footer.tagline">Irish Bar &amp; Restaurant · Barcelona</p>
 
     <nav class="footer__nav" aria-label="Footer">
@@ -659,9 +633,9 @@
     <div class="footer__bottom">
       <p data-i18n="footer.copyright">© {year} The Fastnet. Pg. de Joan de Borbó, 22, Barcelona.</p>
       <div class="footer__lang">
-        <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
-        <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="Español">ES</button>
-        <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="Català">CA</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="true" aria-label="EN — English">EN</button>
+        <button class="lang-btn" data-lang="es" aria-pressed="false" aria-label="ES — Español">ES</button>
+        <button class="lang-btn" data-lang="ca" aria-pressed="false" aria-label="CA — Català">CA</button>
       </div>
     </div>
   </div>
@@ -670,7 +644,7 @@
 <!-- ============================================================
      COOKIE BANNER
      ============================================================ -->
-<div id="cookie-banner" data-visible="false" role="dialog" aria-label="Cookie consent">
+<div id="cookie-banner" data-visible="false" role="dialog" aria-modal="true" aria-label="Cookie consent">
   <p data-i18n="cookie.text">We use cookies to improve your experience and understand how you use our site.</p>
   <p><a href="privacy.html" data-i18n="cookie.privacy" style="text-decoration:underline;">Read our Privacy Policy</a></p>
   <div class="cookie__actions">

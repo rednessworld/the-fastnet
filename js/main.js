@@ -11,6 +11,27 @@
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ============================================================
+     DIALOG BACKGROUND INERTING — true modal behavior for screen
+     readers (Tab-trapping alone still leaves background content
+     reachable via virtual-cursor/swipe navigation). Reference-
+     counted so #mobile-nav and #cookie-banner can safely overlap.
+     ============================================================ */
+  let openDialogCount = 0;
+  function backgroundEls() {
+    return Array.from(document.body.children).filter(
+      (el) => el.id !== 'mobile-nav' && el.id !== 'cookie-banner'
+    );
+  }
+  function pushDialog() {
+    openDialogCount++;
+    if (openDialogCount === 1) backgroundEls().forEach((el) => { el.inert = true; });
+  }
+  function popDialog() {
+    openDialogCount = Math.max(0, openDialogCount - 1);
+    if (openDialogCount === 0) backgroundEls().forEach((el) => { el.inert = false; });
+  }
+
+  /* ============================================================
      LOADING SCREEN — first visit only
      ============================================================ */
   window.addEventListener('load', () => {
@@ -39,6 +60,7 @@
     mobileNav.setAttribute('aria-hidden', 'false');
     hamburger.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
+    pushDialog();
     if (mobileClose) mobileClose.focus();
   }
 
@@ -48,6 +70,7 @@
     mobileNav.setAttribute('aria-hidden', 'true');
     hamburger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
+    popDialog();
     if (lastFocused) lastFocused.focus();
   }
 
@@ -140,12 +163,29 @@
   const navEl = document.getElementById('nav');
   const backTop = document.getElementById('back-to-top');
   const heroImg = document.getElementById('hero-img');
+  const heroSection = document.getElementById('hero');
+  // #hero-img is exactly 100% of the hero's height (no baked-in overscan,
+  // to keep the at-rest object-fit: cover crop at its aspect-ratio floor).
+  // Cap the translate distance so it stays small relative to how much of
+  // the section has already scrolled past — this keeps the shift purely
+  // decorative without ever needing the image itself to be inflated.
+  const heroParallaxMax = heroSection ? heroSection.offsetHeight * 0.08 : 80;
+
+  const heroParallaxRange = heroParallaxMax / 0.4;
+  let heroParallaxActive = null;
 
   function onScrollPosition(y) {
     if (navEl) navEl.classList.toggle('nav--scrolled', y > 40);
     if (backTop) backTop.classList.toggle('visible', y > 400);
     if (heroImg && !prefersReducedMotion) {
-      heroImg.style.transform = `translateY(${y * 0.4}px)`;
+      const inRange = y <= heroParallaxRange;
+      if (inRange !== heroParallaxActive) {
+        heroImg.style.willChange = inRange ? 'transform' : 'auto';
+        heroParallaxActive = inRange;
+      }
+      if (inRange) {
+        heroImg.style.transform = `translateY(${y * 0.4}px)`;
+      }
     }
   }
 
@@ -189,16 +229,18 @@
     const panels = document.querySelectorAll('.menu__panel');
     const container = document.querySelector('.menu__panels');
     if (!panels.length || !container) return;
+    panels.forEach((p) => { p.style.display = 'block'; });
     let max = 0;
-    panels.forEach((p) => {
-      p.style.display = 'block';
-      max = Math.max(max, p.scrollHeight);
-      p.style.display = '';
-    });
+    panels.forEach((p) => { max = Math.max(max, p.scrollHeight); });
+    panels.forEach((p) => { p.style.display = ''; });
     container.style.minHeight = max + 'px';
   }
   document.addEventListener('DOMContentLoaded', setMenuHeight);
-  window.addEventListener('resize', setMenuHeight);
+  let menuHeightResizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(menuHeightResizeTimer);
+    menuHeightResizeTimer = setTimeout(setMenuHeight, 150);
+  });
 
   /* ============================================================
      COOKIE CONSENT (GDPR)
@@ -221,10 +263,13 @@
   }
 
   if (cookieBanner) {
+    let cookieLastFocused = null;
     const consent = localStorage.getItem('fastnet_cookie_consent');
     if (!consent) {
       requestAnimationFrame(() => {
+        cookieLastFocused = document.activeElement;
         cookieBanner.dataset.visible = 'true';
+        pushDialog();
         if (btnAccept) btnAccept.focus();
       });
     } else if (consent === 'accepted') {
@@ -234,9 +279,25 @@
     function setConsent(value) {
       localStorage.setItem('fastnet_cookie_consent', value);
       cookieBanner.dataset.visible = 'false';
+      popDialog();
       if (value === 'accepted') loadGA4();
+      if (cookieLastFocused) cookieLastFocused.focus();
     }
     if (btnAccept) btnAccept.addEventListener('click', () => setConsent('accepted'));
     if (btnDecline) btnDecline.addEventListener('click', () => setConsent('declined'));
+
+    document.addEventListener('keydown', (e) => {
+      if (cookieBanner.dataset.visible !== 'true' || e.key !== 'Tab') return;
+      const focusables = [btnAccept, btnDecline].filter(Boolean);
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
   }
 })();
